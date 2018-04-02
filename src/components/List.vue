@@ -1,40 +1,27 @@
 <!-- 列表页 -->
 <template>
-  <aside class="aside-wrap">
-    <div>列表</div>
-    <div>
+  <section class="list-wrap">
+    <div class="top">
+
+    </div>
+    <div class="bottom">
       <ul>
-        <li v-for="item in category" :key="item.id">{{item.title}}</li>
+        <li v-for="(item, index) in summaryInfoList" :key="index">{{item.title}}</li>
       </ul>
     </div>
-  </aside>
+  </section>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      category: [{
-        id: 1,
-        title: 'hello world',
-        path: ''
-      },{
-        id: 1,
-        title: 'hello world',
-        path: ''
-      },{
-        id: 1,
-        title: 'hello world',
-        path: ''
-      },{
-        id: 1,
-        title: 'hello world',
-        path: ''
-      },{
-        id: 1,
-        title: 'hello world',
-        path: ''
-      }]
+    }
+  },
+  props: {
+    summaryInfoList: {
+      type: Array,
+      default: () => []
     }
   }
 }
