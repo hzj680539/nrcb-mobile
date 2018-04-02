@@ -7,8 +7,9 @@
         <aside-bar/>
       </div>
       <div class="content" slot="content">
-        <list v-if="showSummaryList" :summaryInfoList="summaryInfoList"/>
-        <detail v-else :pageInfoList="pageInfoList"/>
+        <!-- <list v-show="showSummaryList" :pages="pages" :summaryInfoList="summaryInfoListByPage" @selectTitle="selectTitle" @pageChange="pageChange"/>
+        <detail v-show="!showSummaryList" :pageInfo="pageInfoByHref"/> -->
+        <router-view/>
       </div>
     </vue-drawer-layout>
   </section>
@@ -16,48 +17,46 @@
 
 <script>
 import AsideBar from './Aside.vue'
-import List from './List.vue'
-import Detail from './Detail.vue'
-const $ = window.$
+// import List from './List.vue'
+// import Detail from './Detail.vue'
+// import summaryInfoList from '@/file/summaryInfoList.json'
+// import pageInfoList from '@/file/pageInfoList.json'
 
 export default {
   data () {
     return {
-      isDrawerShow: false,
-      showSummaryList: true,
-      summaryInfoList: [
-        // {"id": 1,
-        //   "title": "你好ad打算发放大的司法所 list"
-        // }
-      ],
-      pageInfoList: [
-        {
-          id: 1,
-          title: '你好ad打算发放大的司法所 detail',
-          imgList: ['xxxxxxxxxx.jpg', 'xxxxxxxxxx.jpg', 'xxxxxxxxxx.jpg']
-        }
-      ]
+      // currentPage: 1,
+      // rows: 12, // 每页显示数量
+      isDrawerShow: false
+      // showSummaryList: true,
+      // summaryInfoList: summaryInfoList,
+      // pageInfoList: pageInfoList,
+      // pageInfoByHref: {}
     }
   },
   components: {
-    AsideBar,
-    List,
-    Detail
+    AsideBar
+    // List,
+    // Detail
   },
   mounted () {
-    this.getSummaryInfo()
   },
   methods: {
-    getSummaryInfo () {
-      let that = this
-      $.getJSON('file/demo.json', function (data) {
-        that.summaryInfoList = data
-      })
-    },
     handleToggleDrawer () {
       console.log('handleToggleDrawer')
       this.isDrawerShow = !this.isDrawerShow
       this.$refs.drawer.toggle()
+    },
+    selectTitle (href) {
+      console.log(href)
+      this.showSummaryList = false
+      this.pageInfoList.forEach(item => {
+        if (item.href === href) {
+          this.pageInfoByHref = item
+        }
+      })
+    },
+    pageChange (pageNum) {
     }
   }
 }

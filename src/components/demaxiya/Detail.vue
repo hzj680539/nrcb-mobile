@@ -2,15 +2,12 @@
 <template>
   <section class="main-wrap">
     <div class="intro">
-
+      <div>{{pageInfo.title}}</div>
     </div>
     <div class="summary-info">
       <ul>
-        <li v-for="(item, index) in pageInfoList" :key="index">
-          <div>{{item.title}}</div>
-          <p v-for="(img, i) in item.imgList" :key="i">
-            <img :src="img">
-          </p>
+        <li v-for="(item, index) in pageInfo.imgList" :key="index">
+          <img :src="item">
         </li>
       </ul>
     </div>
@@ -24,9 +21,14 @@ export default {
     }
   },
   props: {
-    pageInfoList: {
-      type: Array,
-      default: () => []
+    pageInfo: {
+      type: Object,
+      default () {
+        return {
+          title: '',
+          imgList: []
+        }
+      }
     }
   }
 }

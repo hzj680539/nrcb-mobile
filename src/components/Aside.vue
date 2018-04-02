@@ -9,7 +9,8 @@
     <div class="bottom">
       <ul>
         <li v-for="item in category" :key="item.id">
-          <div>{{item.title}}</div>
+          <!-- <div>{{item.title}}</div> -->
+          <router-link tag="div" :to="item.path">{{item.title}}</router-link>
         </li>
       </ul>
     </div>
@@ -22,24 +23,24 @@ export default {
     return {
       category: [{
         id: 1,
-        title: 'Hello world',
-        path: ''
+        title: '德玛西亚',
+        path: 'dema'
       }, {
         id: 2,
-        title: 'hello world',
-        path: ''
+        title: '艾欧尼亚',
+        path: 'aiou'
       }, {
         id: 3,
-        title: 'hello world',
-        path: ''
+        title: '诺克萨斯',
+        path: 'nuoke'
       }, {
         id: 4,
-        title: 'hello world',
-        path: ''
+        title: '裁决之地',
+        path: 'caijue'
       }, {
         id: 5,
-        title: 'hello world',
-        path: ''
+        title: '班德尔城',
+        path: 'bande'
       }]
     }
   }
