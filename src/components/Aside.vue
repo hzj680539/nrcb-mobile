@@ -8,8 +8,7 @@
     </div>
     <div class="bottom">
       <ul>
-        <li v-for="item in category" :key="item.id">
-          <!-- <div>{{item.title}}</div> -->
+        <li v-for="item in category" :key="item.id" @click="menuChange">
           <router-link tag="div" :to="item.path">{{item.title}}</router-link>
         </li>
       </ul>
@@ -24,24 +23,30 @@ export default {
       category: [{
         id: 1,
         title: '德玛西亚',
-        path: 'dema'
+        path: '/dema/list'
       }, {
         id: 2,
         title: '艾欧尼亚',
-        path: 'aiou'
+        path: '/aiou/list'
       }, {
         id: 3,
         title: '诺克萨斯',
-        path: 'nuoke'
+        path: '/aiou/list'
       }, {
         id: 4,
         title: '裁决之地',
-        path: 'caijue'
+        path: '/aiou/list'
       }, {
         id: 5,
         title: '班德尔城',
-        path: 'bande'
+        path: '/aiou/list'
       }]
+    }
+  },
+  methods: {
+    // 切换了目录
+    menuChange () {
+      this.$emit('menuChange')
     }
   }
 }

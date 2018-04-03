@@ -1,9 +1,9 @@
 import Index from '@/components/modules/PageRouter'
-const List = resolve => require(['@/components/pages/demaxiya/List'], resolve)
-const Detail = resolve => require(['@/components/pages/demaxiya/Detail'], resolve)
+const List = resolve => require(['@/components/pages/aiouniya/List'], resolve)
+const Detail = resolve => require(['@/components/pages/aiouniya/Detail'], resolve)
 
 const routes = [{
-  path: '/dema',
+  path: '/aiou',
   component: Index,
   children: [
     {
