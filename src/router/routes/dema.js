@@ -1,5 +1,4 @@
-import Index from '@/components/Index'
-
+const Index = resolve => require(['@/components/demaxiya/Index'], resolve)
 const List = resolve => require(['@/components/demaxiya/List'], resolve)
 const Detail = resolve => require(['@/components/demaxiya/Detail'], resolve)
 
