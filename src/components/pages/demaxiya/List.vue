@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import summaryInfoList from '@/file/summaryInfoList.json'
+import summaryInfoList from '@/filesDema/summaryInfoList.json'
 
 export default {
   data () {
     return {
-      pageRows: 15,
+      pageRows: 12,
       summaryInfoList: summaryInfoList,
       titleList: []
     }

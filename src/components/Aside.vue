@@ -30,15 +30,15 @@ export default {
         path: '/aiou/list'
       }, {
         id: 3,
-        title: '诺克萨斯',
+        title: '敬请期待',
         path: '/aiou/list'
       }, {
         id: 4,
-        title: '裁决之地',
+        title: '敬请期待',
         path: '/aiou/list'
       }, {
         id: 5,
-        title: '班德尔城',
+        title: '敬请期待',
         path: '/aiou/list'
       }]
     }

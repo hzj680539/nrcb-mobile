@@ -1,8 +1,8 @@
-<!-- 详情页 -->
+<!-- 详情页 德玛西亚 -->
 <template>
   <section class="main-wrap">
     <div class="intro">
-      <!-- <div>德玛西亚 detail</div> -->
+      <div>{{pageInfo.title}}</div>
     </div>
     <div class="img-wrap">
       <ul>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import pageInfoList from '@/file/pageInfoList.json'
+import pageInfoList from '@/filesDema/pageInfoList.json'
 export default {
   data () {
     return {
@@ -35,14 +35,9 @@ export default {
     getPageInfo () {
       let listLength = this.pageInfoList.length
       console.log('listLength', listLength)
-      this.pageInfoList.find(item => {
-        // return item.
+      this.pageInfo = this.pageInfoList.find(item => {
+        return item.id === this.pageId
       })
-      for (let i = 0; i < listLength; i++) {
-        if (this.pageId === this.pageInfoList[i].id) {
-          this.pageInfo = this.pageInfoList[i]
-        }
-      }
     },
     // 返回
     backForward () {

@@ -1,7 +1,7 @@
 <!-- 主页面 -->
 <template>
   <section class="container">
-    <div @click="handleToggleDrawer" class="show-menu">{{!isDrawerShow ? '显示菜单' : '隐藏菜单'}}</div>
+    <!-- <div @click="handleToggleDrawer" class="show-menu">{{!isDrawerShow ? '显示菜单' : '隐藏菜单'}}</div> -->
     <vue-drawer-layout ref="drawer">
       <div class="drawer" slot="drawer">
         <aside-bar @menuChange="handleToggleDrawer"/>
