@@ -13,6 +13,9 @@
         </li>
       </ul>
     </div>
+    <div class="jiafei-wrap">
+      <img src="~@/assets/images/jiafei.jpg" alt="">
+    </div>
   </aside>
 </template>
 
